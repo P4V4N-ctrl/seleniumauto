@@ -41,7 +41,7 @@ pytest --html=report.html --self-contained-html
 
 Bash
 pip install -r requirements.txt
-🚦 How to Run the Tests
+
 To run all tests and generate a professional HTML report, use the following command:
 
 Bash
@@ -54,6 +54,7 @@ HTML Report: Open report.html in any browser to see the visual dashboard.
 Screenshots: If a test fails, a time-stamped screenshot is automatically saved in the screenshots/ folder.
 
 🧪 Implementation Details (Task Requirements)
+
 Task 1: Environment configured with venv and requirements.txt.
 
 Task 2: Automated Login and Checkout Form with navigation logic.
