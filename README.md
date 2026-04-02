@@ -1,44 +1,43 @@
-🚀 Selenium POM Automation Framework
-A professional-grade test automation framework built with Python, Selenium, and Pytest. This project automates the end-to-end journey of a user on the SauceDemo website, including secure login and dynamic form submission.
+A scalable and maintainable test automation framework built using Python, Selenium WebDriver, and Pytest following the Page Object Model (POM) design pattern.
+This framework automates the end-to-end user workflow of the SauceDemo web application, including login and form submission scenarios.
 
 🌟 Key Features
-Page Object Model (POM): Clean separation between page elements and test logic.
+	•	Page Object Model (POM): Separation of locators and test logic for better maintainability.
+	•	Pytest Fixtures: Centralized browser setup and teardown using conftest.py.
+	•	Explicit Waits: Implemented WebDriverWait for handling dynamic web elements.
+	•	Dynamic Test Data: Faker library used to generate unique test data.
+	•	HTML Reporting: Automated report generation using pytest-html.
+	•	Screenshot on Failure: Automatically captures screenshots for failed test cases.
+	•	Headless Execution მხარდაჭერა: Tests can run in headless mode.
+	•	Modular Framework Structure: Organized into pages, tests, config, and utilities.
 
-Single-Session Execution: Optimized to run the entire suite in one browser window.
-
-Dynamic Data: Uses the Faker library to generate unique user data for every test run.
-
-Robust Waiting: Implements Explicit Waits (WebDriverWait) to handle asynchronous elements—no time.sleep() used.
-
-Automated Reporting: Generates detailed HTML reports with embedded failure screenshots.
+⸻
 
 📁 Project Structure
-Plaintext
 selenium-automation/
-├── pages/               # Page Classes (Locators & Actions)
-│   ├── login_page.py
-│   └── form_page.py
-├── tests/               # Test Scripts
-│   ├── test_login.py
-│   └── test_form_submission.py
-├── config/              # Configuration (URLs, Credentials)
-│   └── config.json
-├── screenshots/         # Automated failure captures
-├── conftest.py          # Pytest Fixtures & Browser Setup
-├── pytest.ini           # Test Configuration
-└── requirements.txt     # Dependency list
+│
+├── pages/           # Page Object classes (locators + actions)
+├── tests/           # Test cases
+├── config/          # Configuration files (URL, test data)
+├── screenshots/     # Failure screenshots
+├── conftest.py      # Pytest fixtures (browser setup/teardown)
+├── pytest.ini       # Pytest configuration
+├── report.html      # HTML test report
+├── requirements.txt # Dependencies
+└── README.md        # Project documentation
+
 🛠️ Setup & Installation
 Clone the repository:
 
-Bash
-git clone <your-repo-url>
+git clone <repository-url>
 cd selenium-automation
-Create and activate a virtual environment:
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
 
-Bash
-python3 -m venv venv
-source venv/bin/activate  # On Mac/Linux
-Install dependencies:
+🚦 How to Run Tests
+pytest -v
+pytest --html=report.html --self-contained-html
 
 Bash
 pip install -r requirements.txt
